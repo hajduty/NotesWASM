@@ -367,4 +367,4 @@ FodyWeavers.xsd
 
 /Notes/Styles/app.output.css
 /Notes/wwwroot/app.css
-/Notes/Data/MdService.cs
+global.json
