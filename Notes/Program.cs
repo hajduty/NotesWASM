@@ -1,5 +1,3 @@
-using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
 using Notes.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,9 +5,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-builder.Services.AddSingleton<WeatherForecastService>();
-builder.Services.AddSingleton<MoodyService>();
 builder.Services.AddSingleton<MdService>();
+builder.Services.AddScoped<MoodyService>();
 
 var app = builder.Build();
 
