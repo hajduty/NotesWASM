@@ -2,11 +2,11 @@
 
 <div class="page block lg:flex h-full text-white">
     <div class="w-full lg:h-full lg:min-w-80 lg:w-80 max-h-96 lg:max-h-[unset] bg-zinc-800 border-r border-zinc-700 overflow-hidden flex">
-        <NavMenu HandleChangeActiveNote="@HandleChangeActiveNote" HandleCreateNote="@HandleCreateNote" />
+        <NavMenu ParHandleChangeActiveNote="@HandleChangeActiveNote" ParHandleCreateNote="@HandleCreateNote" />
     </div>
 
     <main class="w-full h-full lg:w-[unset] lg:grow bg-zinc-900 overflow-hidden">
-        <Notes.Pages.Index HandleChangeTextarea="@HandleChangeTextarea" HandleChangeTitle="@HandleChangeTitle" HandleDeleteNote="@HandleDeleteNote" />
+        <NotesWASM.Pages.Index ParHandleChangeTextarea="@HandleChangeTextarea" ParHandleChangeTitle="@HandleChangeTitle" ParHandleDeleteNote="@HandleDeleteNote" />
     </main>
 </div>
 
@@ -101,9 +101,11 @@
 
         //if (storageResult.Success && storageResult.Value is not null && storageResult.Value.Count > 0)
         //{
+        if (storageResult != null && storageResult.Count > 0)        {
             State.Notes = storageResult;
             State.Md.ActiveNote = State.Notes.First();
             StateHasChanged();
+        }
         //}
     }
 

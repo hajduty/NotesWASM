@@ -35,26 +35,26 @@
     private bool isPreview = false;
 
     [Parameter]
-    public Action<ChangeEventArgs>? HandleChangeTextarea { get; set; }
+    public Action<ChangeEventArgs>? ParHandleChangeTextarea { get; set; }
 
     [Parameter]
-    public Action<ChangeEventArgs>? HandleChangeTitle { get; set; }
+    public Action<ChangeEventArgs>? ParHandleChangeTitle { get; set; }
 
     [Parameter]
-    public Action? HandleDeleteNote { get; set; }
+    public Action? ParHandleDeleteNote { get; set; }
 
     private void OnHandleChangeTitle(ChangeEventArgs e)
     {
-        HandleChangeTitle?.Invoke(e);
+        ParHandleChangeTitle?.Invoke(e);
     }
 
     private void OnHandleChangeTextarea(ChangeEventArgs e)
     {
-        HandleChangeTextarea?.Invoke(e);
+        ParHandleChangeTextarea?.Invoke(e);
     }
 
     private void OnHandleDeleteNote()
     {
-        HandleDeleteNote?.Invoke();
+        ParHandleDeleteNote?.Invoke();
     }
 }
