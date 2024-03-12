@@ -1,0 +1,20 @@
+﻿@using Markdig;
+
+<div class="prose prose-invert break-words hyphens-auto">
+    @((MarkupString)ConvertToHtml(MD ?? ""))
+</div>
+
+@code {
+    [Parameter]
+    public string? MD { get; set; }
+
+    private string ConvertToHtml(string markdown)
+    {
+        var pipeline = new MarkdownPipelineBuilder()
+        .UseAdvancedExtensions()
+        .Build();
+
+        string html = Markdown.ToHtml(markdown, pipeline);
+        return html;
+    }
+}
