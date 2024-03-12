@@ -1,4 +1,4 @@
-namespace Notes.Data
+﻿namespace NotesWASM.Model
 {
     public class MoodyService
     {

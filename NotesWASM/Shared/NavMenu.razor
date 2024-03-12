@@ -35,18 +35,18 @@
 
 @code {
     [Parameter]
-    public Action<MoodyData>? HandleChangeActiveNote { get; set; }
+    public Action<MoodyData>? ParHandleChangeActiveNote { get; set; }
 
     private void OnHandleChangeActiveNote(MoodyData moodyData)
     {
-        HandleChangeActiveNote?.Invoke(moodyData);
+        ParHandleChangeActiveNote?.Invoke(moodyData);
     }
 
     [Parameter]
-    public Action? HandleCreateNote { get; set; }
+    public Action? ParHandleCreateNote { get; set; }
 
     private void OnHandleCreateNote()
     {
-        HandleCreateNote?.Invoke();
+        ParHandleCreateNote?.Invoke();
     }
 }
