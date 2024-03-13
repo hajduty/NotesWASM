@@ -31,5 +31,21 @@ jobs:
               with:
                   token: ${{ secrets.GITHUB_TOKEN }}
                   folder: release/wwwroot
-                  
+         
+            - name: Upload artifact
+              uses: actions/upload-pages-artifact@v3
+              with:
+                   # Upload entire repository
+                   path: release/wwwroot
+
+    deploy:
+        environment:
+          name: github-pages
+          url: ${{ steps.deployment.outputs.page_url }}
+        runs-on: ubuntu-latest
+        needs: deploy-to-github-pages
+        steps:
+          - name: Deploy to GitHub Pages
+            id: deployment
+            uses: actions/deploy-pages@v4
 # Based on https://gist.github.com/Carl-Hugo/721b848942083dc7739141a917a30653
