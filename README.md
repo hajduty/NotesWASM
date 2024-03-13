@@ -1,5 +1,7 @@
 # Notes
 
+[See demo here.](https://hajduty.github.io/NotesWASM)
+
 - Simple Markdown support.
 - Local storage of notes.
 - Minimal UI.
